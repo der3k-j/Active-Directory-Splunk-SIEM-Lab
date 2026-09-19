@@ -94,7 +94,7 @@ index=main host="Win10"
 Aggregates authentication failure events to identify potential password spraying, dictionary attacks, or brute-force activity.
 
 ```spl
-index=main EventCode=4625 | stats count by Account_Name, host | sort - count
+index=main EventCode=4625 | stats count by Account_Name, host 
 ```
-
+![Brute Force Search](docs/screenshots/07_spl_bruteforce_search.png) 
 
