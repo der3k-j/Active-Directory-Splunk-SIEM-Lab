@@ -100,6 +100,14 @@ index=main EventCode=4625 | stats count by Account_Name, host
 ```
 ![Brute Force Search](docs/screenshots/07_spl_bruteforce_search.png) 
 
+#### Query 3: Track Succesful Authetications & Logon Types (Event ID 4624)
+Monitors successful user logins and correlates session types to detect potential lateral movement or remote desktop access.
+
+```spl
+index=maiadminn EventCode=4624 | table _time, Account_Name, LogonType, host
+```
+
+
 ### My SPL Pipeline Breakdown
 
 - index=main EventCode=4625: Filters raw Windows event logs specifically for failed logon events (4625).
