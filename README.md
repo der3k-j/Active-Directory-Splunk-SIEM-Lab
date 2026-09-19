@@ -104,7 +104,7 @@ index=main EventCode=4625 | stats count by Account_Name, host
 Monitors successful user logins and correlates session types to detect potential lateral movement or remote desktop access.
 
 ```spl
-index=maiadminn EventCode=4624 | table _time, Account_Name, LogonType, host
+index=main EventCode=4624 | table _time, Account_Name, LogonType, host
 ```
 ![Successful Logon Search](docs/screenshots/07.1_spl_successfullogon_search.png) 
 
