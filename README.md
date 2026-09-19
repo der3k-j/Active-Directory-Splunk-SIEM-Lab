@@ -121,3 +121,14 @@ index=main EventCode=4625 | stats count by Account_Name
 - Visualization: Pie Chart
 
 ![Security Dashboard](docs/screenshots/08_security_dashboard.png)
+
+---
+
+## Key Takeaways & Personal Reflections
+
+Building this lab was a major milestone in my cybersecurity journey. Beyond getting hands-on with Active Directory and Splunk, it gave me a realistic look into system administration, networking fundamentals, and SOC troubleshooting:
+
+* **Active Directory & Network Fundamentals:** Setting up a Domain Controller from scratch and joining a Windows 10 workstation to `lab.local` significantly deepened my understanding of enterprise identity management and static IP networking. 
+* **Real-World Troubleshooting (Port 9997 Fix):** During the ingestion setup, my workstation failed to establish a TCP connection to Splunk on port `9997`. I analyzed the traffic path and resolved the issue by configuring an inbound Windows Firewall rule on `WinDC` to allow traffic on port `9997`, successfully re-establishing log flow.
+* **Group Policy & Security Auditing:** I learned how GPOs enforce security baselines across an entire domain. Configuring audit policies allowed me to see exactly how endpoint login events are generated and captured centrally.
+* **Splunk Ingestion & SPL Basics:** I gained practical experience installing the Splunk Universal Forwarder, configuring `inputs.conf` to stream `WinEventLog://Security` logs off-host, and writing foundational SPL queries to filter specific security events like failed logons (`EventCode=4625`).
