@@ -70,7 +70,7 @@ Installed Splunk Universal Forwarder on `Win11` pointing to indexer `192.168.10.
 
 ## Phase 4: Attack Simulation & Threat Detection
 
-To validate the telemetry pipeline, a controlled brute-force attack was simulated against the endpoint workstation. The resulting telemetry was ingested by Splunk, analyzed using custom Search Processing Language (SPL) queries, and visualized within a real-time SOC security dashboard panel.
+To validate my security logging pipeline, I simulated a controlled brute-force attack against the endpoint workstation. I then ingested the telemetry into Splunk Enterprise, analyzed it using custom Search Processing Language (SPL) queries, and correlated events across Windows Event IDs.
 
 ---
 
@@ -87,7 +87,7 @@ To validate the telemetry pipeline, a controlled brute-force attack was simulate
 Confirms active event ingestion and log streaming from the `Win11` workstation to the central Splunk indexer.
 
 ```spl
-index=main host="Win10"
+index=main host="DESKTOP-A914PAV"
 ```
 
 #### Query 2: Detect Failed Logons / Brute-Force Attacks (Event ID 4625)
@@ -98,3 +98,26 @@ index=main EventCode=4625 | stats count by Account_Name, host
 ```
 ![Brute Force Search](docs/screenshots/07_spl_bruteforce_search.png) 
 
+### My SPL Pipeline Breakdown
+
+- index=main EventCode=4625: Filters raw Windows event logs specifically for failed logon events (4625).
+
+- | stats count by Account_Name, host: Groups total failure counts by target account name and reporting host.
+
+---
+
+## Phase 5: Building the SOC Security Dashboard
+
+To enable continuous security monitoring and quick-reaction visibility, I built a real-time visual dashboard panel inside Splunk Web.
+
+### Dashboard Configuration Details:
+
+- Dashboard Title: Enterprise Security & Authentication Tracker
+- Panel Title: Failed Logon Attempts (Brute Force Detection)
+- Underlying Query:
+```spl
+index=main EventCode=4625 | stats count by Account_Name
+```
+- Visualization: Pie Chart
+
+![Security Dashboard](docs/screenshots/08_security_dashboard.png)
