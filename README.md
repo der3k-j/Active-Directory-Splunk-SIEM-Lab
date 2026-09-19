@@ -38,7 +38,7 @@ Configured Windows 11 with static IP `192.168.10.20` pointing to `192.168.10.10`
 
 Configured the **Default Domain Policy** via Group Policy Management (`gpmc.msc`) on `WinDC` to enforce audit logging baselines across domain endpoints:
 
-- **Audit Logon (Success & Failure):** Records all login attempts (Event IDs 4624 & 4625).
+- **Audit Privilege Use (Success & Failure):** Records all login attempts (Event IDs 4624 & 4625).
 - **Audit Privilege Use (Success & Failure):** Tracks elevated rights and administrative actions.
 - **Audit File System (Success & Failure):** Logs unauthorized sensitive file modifications/access.
 
