@@ -79,7 +79,7 @@ To validate the telemetry pipeline, a controlled brute-force attack was simulate
 ---
 
 ### Step 4.1: Attack Simulation Scenario
-1. Navigated to **VM 2 (`Win10`)** and locked the desktop environment (`Win + L`).
+1. Navigated to **VM 2 (`Win11`)** and locked the desktop environment (`Win + L`).
 2. Initiated a brute-force authentication sequence by attempting to log in as `lab.local\Administrator` with incorrect passwords **4 consecutive times**.
 3. Authenticated successfully on the **5th attempt** using the valid password to generate baseline success metrics.
 
@@ -88,7 +88,7 @@ To validate the telemetry pipeline, a controlled brute-force attack was simulate
 ### Step 4.2: SPL Detection Queries & Telemetry Analysis
 
 #### Query 1: Verify Live Endpoint Connectivity
-Confirms active event ingestion and log streaming from the `Win10` workstation to the central Splunk indexer.
+Confirms active event ingestion and log streaming from the `Win11` workstation to the central Splunk indexer.
 
 ```spl
 index=main host="Win10"
