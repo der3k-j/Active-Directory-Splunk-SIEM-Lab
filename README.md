@@ -10,7 +10,7 @@ This project demonstrates the design, deployment, and configuration of an isolat
 - **Network Subnet:** `192.168.10.0/24` (VirtualBox Host-Only Isolated Network, Gateway: `192.168.10.1`, No DHCP)
 - **Domain Controller (`WinDC`):** Windows Server 2022 | IP: `192.168.10.10` | Domain: `lab.local`
   - Active Directory Domain Services (AD DS), Domain DNS, Group Policy Management, Splunk Enterprise (Receiver Port 9997)
-- **Workstation (`Win10`):** Windows 10 Workstation | IP: `192.168.10.20` | Domain-joined (`lab.local`)
+- **Workstation (`Win11`):** Windows 11 Workstation | IP: `192.168.10.20` | Domain-joined (`lab.local`)
   - Generates Windows Event Logs, Splunk Universal Forwarder Agent
 
 ---
@@ -25,10 +25,10 @@ Configured Windows Server 2022 with static IP `192.168.10.10` and self-referenci
 
 ![WinDC IP Config](docs/screenshots/01_ipconfig_windc.png)
 
-### 3. VM 2 (Win10) Static IP & Domain Join Verification
-Configured Windows 10 with static IP `192.168.10.20` pointing to `192.168.10.10` for DNS, then joined the domain `lab.local`.
+### 3. VM 2 (Win11) Static IP & Domain Join Verification
+Configured Windows 11 with static IP `192.168.10.20` pointing to `192.168.10.10` for DNS, then joined the domain `lab.local`.
 
-![Win10 IP Config](docs/screenshots/02_ipconfig_win11.png)
+![Win11 IP Config](docs/screenshots/02_ipconfig_win11.png)
 
 ![Domain Join Success](docs/screenshots/03_domain_join_success.png)
 
