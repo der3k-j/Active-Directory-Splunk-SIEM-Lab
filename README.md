@@ -64,7 +64,7 @@ Installed Splunk Enterprise on `WinDC` and opened TCP receiving port **9997** (`
 ### 2. Universal Forwarder Log Forwarding (`inputs.conf`)
 Installed Splunk Universal Forwarder on `Win11` pointing to indexer `192.168.10.10:9997`. Configured `inputs.conf` to stream local Windows Security logs:
 
-(docs/screenshots/06 inputs conf file.png)
+![Inputs Configuration](docs/screenshots/06_inputs_conf_file.png) 
 
 ---
 
