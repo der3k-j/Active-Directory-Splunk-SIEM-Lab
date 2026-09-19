@@ -28,7 +28,7 @@ Configured Windows Server 2022 with static IP `192.168.10.10` and self-referenci
 ### 3. VM 2 (Win10) Static IP & Domain Join Verification
 Configured Windows 10 with static IP `192.168.10.20` pointing to `192.168.10.10` for DNS, then joined the domain `lab.local`.
 
-![Win10 IP Config](docs/screenshots/02_ipconfig_win10.png)
+![Win10 IP Config](docs/screenshots/02_ipconfig_win11.png)
 
 ![Domain Join Success](docs/screenshots/03_domain_join_success.png)
 
@@ -49,6 +49,8 @@ Policy update enforced across endpoints using `gpupdate /force`.
 ![GPO Audit Policy Configuration](docs/screenshots/04.2_gpo_audit_config.png) 
 
 ![GPO Audit Policy Configuration](docs/screenshots/04.3_gpo_audit_config.png) 
+
+![GPO Audit Policy Configuration](docs/screenshots/04.4_gpo_audit_config.png) 
 
 ---
 
