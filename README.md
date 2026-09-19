@@ -44,7 +44,11 @@ Configured the **Default Domain Policy** via Group Policy Management (`gpmc.msc`
 
 Policy update enforced across endpoints using `gpupdate /force`.
 
-![GPO Audit Policy Configuration](docs/screenshots/04_gpo_audit_config.png)
+![GPO Audit Policy Configuration](docs/screenshots/04.1_gpo_audit_config.png) 
+
+![GPO Audit Policy Configuration](docs/screenshots/04.2_gpo_audit_config.png) 
+
+![GPO Audit Policy Configuration](docs/screenshots/04.3_gpo_audit_config.png) 
 
 ---
 
