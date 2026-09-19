@@ -106,6 +106,7 @@ Monitors successful user logins and correlates session types to detect potential
 ```spl
 index=maiadminn EventCode=4624 | table _time, Account_Name, LogonType, host
 ```
+![Successful Logon Search](docs/screenshots/07.1_spl_successfullogon_search.png) 
 
 
 ### My SPL Pipeline Breakdown
