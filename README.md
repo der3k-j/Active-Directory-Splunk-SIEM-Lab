@@ -92,8 +92,52 @@ Confirms active event ingestion and log streaming from the `Win11` workstation t
 
 ```spl
 index=main host="Win10"
+```
 
+Query 2: Detect Failed Logons / Brute-Force Attacks (Event ID 4625)
+Aggregates authentication failure events to identify potential password spraying, dictionary attacks, or brute-force activity.
 
+Splunk SPL
+index=main EventCode=4625 
+| stats count by TargetUserName, src_ip, host
+| sort - count
+SPL Pipeline Breakdown:
+
+index=main EventCode=4625: Filters raw Windows event logs specifically for failed logon events (4625).
+
+| stats count by TargetUserName, src_ip, host: Groups total failure counts by target account name, source IP address, and reporting host.
+
+| sort - count: Displays high-frequency target accounts at the top of the search output.
+
+SOC Analyst Insight: Event ID 4625 is generated whenever a login request fails. A rapid accumulation of these events targeting administrative accounts highlights active brute-force or credential stuffing attempts.
+
+Query 3: Track Successful Authentications & Logon Types (Event ID 4624)
+Monitors successful user logins and correlates session types to detect potential lateral movement or remote desktop access.
+
+Splunk SPL
+index=main EventCode=4624 
+| table _time, TargetUserName, LogonType, host
+Key Windows Logon Types Monitored:
+
+LogonType 2 (Interactive): Physical keyboard login at the local terminal console.
+
+LogonType 3 (Network): Connection via network resources (e.g., SMB shared folders).
+
+LogonType 10 (Remote Interactive / RDP): Session established via Remote Desktop Protocol.
+
+Phase 5: Building the SOC Security Dashboard
+To enable continuous security monitoring and quick-reaction visibility for SOC analysts, a real-time visual dashboard panel was built inside Splunk Web (Search & Reporting -> Save As -> Dashboard Panel).
+
+Dashboard Configuration Details:
+Dashboard Title: Enterprise Security & Authentication Tracker
+
+Panel Title: Failed Logon Attempts (Brute Force Detection)
+
+Underlying Query:
+
+Splunk SPL
+index=main EventCode=4625 | stats count by TargetUserName
+Visualization: Bar Chart / Metric Visualization
 
 ```spl
 index=main host="Win10"
