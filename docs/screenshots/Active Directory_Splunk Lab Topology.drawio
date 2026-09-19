@@ -1,0 +1,40 @@
+<mxfile host="app.diagrams.net">
+  <diagram name="Page-1" id="5UZ3rZC8VHYgg2kOHBVy">
+    <mxGraphModel dx="1414" dy="795" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-1" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;VirtualBox Host-Only Network&lt;/div&gt;&lt;div&gt;Subnet: 192.168.10.0/24&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="60" width="220" x="327.75" y="140" as="geometry" />
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-2" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="VM 1: WinDC (Server 2022)&lt;div&gt;192.168.10.10&lt;/div&gt;&lt;div&gt;- Active Directory Domain Controller (lab.local)&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- GPO Audit Policies&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Splunk Enterpise (Port 9997)&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="220" width="220" x="120" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-3" parent="1" style="image;aspect=fixed;perimeter=ellipsePerimeter;html=1;align=center;shadow=0;dashed=0;spacingTop=3;image=img/lib/active_directory/windows_server_2.svg;" value="" vertex="1">
+          <mxGeometry height="50" width="40" x="210" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-4" edge="1" parent="1" source="43bT5ZdLhsKooFs1RdoL-2" style="edgeStyle=orthogonalEdgeStyle;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;innerLoopWaypoints=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontSize=12;startSize=8;endSize=8;" target="43bT5ZdLhsKooFs1RdoL-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-5" parent="1" style="whiteSpace=wrap;html=1;aspect=fixed;" value="VM 2: Win11 (Workstation)&lt;div&gt;192.168.10.20&lt;/div&gt;&lt;div&gt;- Joined to lab.local&amp;nbsp;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Splunk Universal Forwarder&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;- Event Logs (WinEventLog)&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;br&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="220" width="220" x="535" y="240" as="geometry" />
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-6" parent="1" style="image;html=1;image=img/lib/clip_art/computers/Workstation_128x128.png" value="" vertex="1">
+          <mxGeometry height="50" width="65" x="612.5" y="250" as="geometry" />
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-13" edge="1" parent="1" style="shape=link;html=1;rounded=0;fontSize=12;startSize=8;endSize=8;curved=1;" value="">
+          <mxGeometry relative="1" width="100" as="geometry">
+            <mxPoint x="340" y="380" as="sourcePoint" />
+            <mxPoint x="540.06" y="380" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-14" parent="1" style="whiteSpace=wrap;html=1;" value="&lt;div&gt;&lt;span style=&quot;background-color: transparent; color: light-dark(rgb(0, 0, 0), rgb(255, 255, 255));&quot;&gt;Forwarding (Port 9997)&lt;/span&gt;&lt;/div&gt;" vertex="1">
+          <mxGeometry height="30" width="100" x="390" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="43bT5ZdLhsKooFs1RdoL-15" parent="1" style="rounded=0;whiteSpace=wrap;html=1;" value="Splunk Data" vertex="1">
+          <mxGeometry height="20" width="77.5" x="399" y="350" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
