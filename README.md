@@ -13,6 +13,8 @@ This project demonstrates the design, deployment, and configuration of an isolat
 - **Workstation (`Win11`):** Windows 11 Workstation | IP: `192.168.10.20` | Domain-joined (`lab.local`)
   - Generates Windows Event Logs, Splunk Universal Forwarder Agent
 
+![Lab Topology](docs/screenshots/Active_Directory_Splunk_Lab_Topology.drawio)
+
 ---
 
 ## Phase 1: Network Isolation & Identity Provisioning
