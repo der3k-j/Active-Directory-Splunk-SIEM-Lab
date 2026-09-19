@@ -64,32 +64,14 @@ Installed Splunk Enterprise on `WinDC` and opened TCP receiving port **9997** (`
 ### 2. Universal Forwarder Log Forwarding (`inputs.conf`)
 Installed Splunk Universal Forwarder on `Win10` pointing to indexer `192.168.10.10:9997`. Configured `inputs.conf` to stream local Windows Security logs:
 
-```ini
+
 [WinEventLog://Security]
 disabled = 0
 index = main
 
 --- 
 
----
 
-## Phase 4: Threat Detection & SPL Engineering
-
-To validate the security logging pipeline, a controlled brute-force attack was simulated against the endpoint workstation. The resulting telemetry was ingested by Splunk Enterprise, analyzed using custom Search Processing Language (SPL) queries, and correlated across Windows Event IDs.
-
----
-
-### Step 4.1: Attack Simulation Scenario
-1. Navigated to **VM 2 (`Win10`)** and locked the desktop session (`Win + L`).
-2. Initiated a brute-force sequence by attempting to log in as `lab.local\Administrator` using invalid passwords **4 consecutive times**.
-3. Authenticated successfully on the **5th attempt** using the valid password to establish a baseline success event.
-
----
-
-### Step 4.2: Telemetry Ingestion & SPL Query Analysis
-
-#### Query 1: Verify Live Endpoint Connectivity
-Confirms active log streaming and indexer connectivity from the `Win10` workstation agent.
 
 ```spl
 index=main host="Win10"
